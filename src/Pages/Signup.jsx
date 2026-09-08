@@ -1,58 +1,55 @@
-import { useState } from "react"
+import { useNavigate } from "react-router-dom";
+import "./Signup.css";
 
-function Signup(){
-    let [Name,setName]=useState("")
-    let [RollNo,setRollNo]=useState("")
-    let [email,setEmail]=useState("")
-    let [password,setPassword]=useState("")
-    
+function Signup(){ 
+    const navigate = useNavigate();
 
-    function submitFrom(e){
-       e.preventDefault()
-        alert(` Name :${Name} RollNo:${RollNo} Email:${email} password: ${password}`)//tilled
-    }
-    return(
-        <div>
-            <form onSubmit={(e)=> submitFrom(e)}>
-          <div>
-            <span>Name:</span>
-            <input type="name" 
-            name="name"
-             placeholder="Enter your name"
-            onChange={(e)=>setName(e.target.value)}
-              />
-        </div>
-        <br/>
-        <div>
-            <span>RollNo:</span>
-            <input type="rollno" 
-            name="rollno"
-             placeholder="Enter your RollNo"
-            onChange={(e)=>setRollNo(e.target.value)}
-              />
-        </div>  
-        <br/>    
-        <div>
-            <span>Email:</span>
-            <input type="email" 
-            name="email"
-             placeholder="Enter your email"
-            onChange={(e)=>setEmail(e.target.value)}
-              />
-        </div>
-         <br/>
-        <div>
-            <span>Password:</span>
-            <input type="password" 
-            name="password" 
-            placeholder="enter your Password"
-            onChange={(e)=>setPassword(e.target.value)} />
-            
-        </div><br/>
-        <button type="submit">SignUp</button>
-      </form>
-        </div>
-        
-    )
+    function submitForm(e){ 
+       e.preventDefault() 
+       navigate("/login")
+    } 
+
+    return( 
+        <div className="signup-container"> 
+            <form className="signup-form" onSubmit={submitForm}> 
+                <h2>Sign Up</h2>
+
+                <div className="form-group"> 
+                    <label>Name:</label> 
+                    <input 
+                        type="text"
+                        placeholder="Enter your name" 
+                    /> 
+                </div> 
+
+                <div className="form-group"> 
+                    <label>Roll No:</label> 
+                    <input 
+                        type="text"
+                        placeholder="Enter your RollNo" 
+                    /> 
+                </div> 
+
+                <div className="form-group"> 
+                    <label>Email:</label> 
+                    <input 
+                        type="email"
+                        placeholder="Enter your email" 
+                    /> 
+                </div> 
+
+                <div className="form-group"> 
+                    <label>Password:</label> 
+                    <input 
+                        type="password"
+                        placeholder="Enter your password" 
+                    /> 
+                </div> 
+
+                <button type="submit">Sign Up</button> 
+            </form> 
+        </div> 
+    ) 
 }
-export default Signup
+
+export default Signup;

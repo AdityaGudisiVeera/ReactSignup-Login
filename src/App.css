@@ -1,73 +1,25 @@
-/* Login Page */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
+h1, h2, h3, p { margin-top: 0; }
+button, input { font: inherit; }
+
+.home-page {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 64px 0 80px;
 }
 
-/* Center the login form */
-body > div {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.home-heading { max-width: 680px; margin-bottom: 42px; }
+.eyebrow { margin-bottom: 12px; color: var(--accent); font-size: 12px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+.home-heading h1 { margin-bottom: 16px; color: var(--ink); font-size: clamp(2.25rem, 5vw, 4rem); line-height: 1.05; letter-spacing: -0.04em; }
+.home-heading > p:last-child { color: var(--muted); font-size: 1.05rem; }
+.product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.product-card { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); box-shadow: 0 8px 24px rgba(25, 43, 74, 0.06); }
+.product-image-wrap { display: grid; place-items: center; height: 190px; margin-bottom: 18px; border-radius: 10px; background: #f7f9fc; }
+.product-image-wrap img { max-width: 78%; max-height: 78%; mix-blend-mode: multiply; }
+.product-card h2 { display: -webkit-box; min-height: 44px; margin-bottom: 12px; overflow: hidden; color: var(--ink); font-size: 15px; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.product-price { color: var(--accent-dark); font-weight: 800; }
 
-/* Form box */
-form {
-    width: 350px;
-    padding: 35px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Email and Password sections */
-form > div {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-/* Labels */
-span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* Input fields */
-input {
-    width: 100%;
-    box-sizing: border-box;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 15px;
-    outline: none;
-}
-
-/* Input focus */
-input:focus {
-    border-color: #333;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-}
-
-/* Login button */
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background: #111;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-/* Button hover */
-button:hover {
-    background: #333;
+@media (max-width: 560px) {
+  .navbar { padding: 16px 20px; }
+  .home-page { width: min(100% - 28px, 1120px); padding-top: 42px; }
+  .login-form, .signup-form { padding: 28px 22px; }
 }
